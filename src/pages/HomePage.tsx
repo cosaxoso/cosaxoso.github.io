@@ -61,13 +61,15 @@ export default function HomePage() {
                 src= {cloud1}
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none absolute bottom-32 left-0 w-40 -translate-x-1/2 sm:w-48 md:w-64 lg:w-80 xl:w-96 2xl:w-[32rem]"            />
+                className="pointer-events-none absolute bottom-[8%] left-0 w-1/3 -translate-x-1/2"
+            />
         
             <img
                 src={cloud2}
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none absolute bottom-32 right-0 w-40 translate-x-1/2 sm:w-48 md:w-64 lg:w-80 xl:w-96 2xl:w-[32rem]"            />
+                className="pointer-events-none absolute bottom-[30%] right-0 w-1/3 translate-x-1/2"
+            />
         </div>
       <h1 className="text-4xl font-bold">
         <TypingAnimation>Hi, I'm Tenzin Choezom 👋</TypingAnimation>
