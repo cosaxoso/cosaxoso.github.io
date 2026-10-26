@@ -1,7 +1,6 @@
 import { TypingAnimation } from "@/components/ui/typing-animation"
 import Particles from "@/components/Particles"
 import { useIsDark } from "@/hooks/useIsDark"
-import Grainient from "@/components/Grainient"
 
 export default function HomePage() {
     const isDark = useIsDark()
@@ -25,15 +24,34 @@ export default function HomePage() {
                     driftSpeed={0.6}   
                 /> 
             ) : (
-                <Grainient
-                    colors={['#120f17', '#2a0f0a', '#9a3412', '#f97316', '#fed7aa']}
-                    angle={55}
-                    flow={0}
-                    silk={0.35}
-                    grainAmount={0}
-                    grainSize={0.5}
-                    interactive={false}
-                    lightMode
+
+                <Particles
+                    particleColors={["#ffffff","#ffffff","#ffffff"]}
+                    particleCount={1400}
+                    particleSpread={10}
+                    speed={0.1}
+                    particleBaseSize={55}
+                    glow={0.2}
+                    twinkle={0}
+                    moveParticlesOnHover
+                    hoverEffect="parallax"
+                    sizeRandomness={1}
+                    shape="circle"
+                    depthOfField={0}
+                    connections={false}
+                    connectionDistance={110}
+                    particleHoverFactor={1}
+                    hoverRadius={140}
+                    drift="down"
+                    driftSpeed={0.8}
+                    alphaParticles
+                    disableRotation
+                    cameraDistance={20}
+                    variation={0}
+                    opacity={1}
+                    clickBurst
+                    intro
+                    lightMode={false}
                 />
             )}
         </div>
