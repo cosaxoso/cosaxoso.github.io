@@ -6,8 +6,8 @@ export default function HomePage() {
     const isDark = useIsDark()
 
   return (
-    <main className="mx-auto max-w-2xl px-6 py-24">
-        <div style={{ position: 'fixed', inset: 0, zIndex: -1 }}>
+    <main className=" mx-auto max-w-2xl px-6 py-24">
+        <div className="fixed inset-0 -z-10 bg-[#C2C2C2] dark:bg-[#0b0f1a]">
             {isDark ? (
                 <Particles
                     particleColors={["#f4ff8a","#c6ff6b","#ffe28a"]}
