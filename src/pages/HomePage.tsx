@@ -1,13 +1,15 @@
 import { TypingAnimation } from "@/components/ui/typing-animation"
 import Particles from "@/components/Particles"
 import { useIsDark } from "@/hooks/useIsDark"
+import cloud1 from "@/assets/cloud1.png"
+import cloud2 from "@/assets/cloud2.png"
 
 export default function HomePage() {
     const isDark = useIsDark()
 
   return (
     <main className=" mx-auto max-w-2xl px-6 py-24">
-        <div className="fixed inset-0 -z-10 bg-[#C2C2C2] dark:bg-[#0b0f1a]">
+        <div className="fixed inset-0 -z-10 bg-[#C2C2C2] dark:bg-[#0a0a0a]">
             {isDark ? (
                 <Particles
                     particleColors={["#f4ff8a","#c6ff6b","#ffe28a"]}
@@ -54,6 +56,18 @@ export default function HomePage() {
                     lightMode={false}
                 />
             )}
+            
+            <img
+                src= {cloud1}
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none absolute bottom-32 left-0 w-40 -translate-x-1/2 sm:w-48 md:w-64 lg:w-80 xl:w-96 2xl:w-[32rem]"            />
+        
+            <img
+                src={cloud2}
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none absolute bottom-32 right-0 w-40 translate-x-1/2 sm:w-48 md:w-64 lg:w-80 xl:w-96 2xl:w-[32rem]"            />
         </div>
       <h1 className="text-4xl font-bold">
         <TypingAnimation>Hi, I'm Tenzin Choezom 👋</TypingAnimation>
