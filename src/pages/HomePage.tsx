@@ -1,4 +1,3 @@
-
 import { Link } from "react-router"
 import { TypingAnimation } from "@/components/ui/typing-animation"
 import { Marquee } from "@/components/ui/marquee"
@@ -16,23 +15,28 @@ const row = "lg:grid lg:grid-cols-12 lg:gap-10"
 
 const now = [
   {
-    where: "Northeastern University",
-    what: "Studying Computer Science and Design",
-    when: "2028",
+    where: "Northeastern University, Boston",
+    what: "Studying Computer Science and Design, exploring the relationship between technology, creativity, and people.",
+    when: "Currently",
   },
   {
-    where: "Goldies Dance Team",
-    what: "Executive Manager, running schedules, budgets and performances",
-    when: "Now",
+    where: "Oakland, California",
+    what: "Started my college journey in the Bay Area, surrounded by a dynamic mix of cultures, artistic expression, and diverse perspectives.",
+    when: "2023-2024",
   },
   {
-    where: "Tibetan Computer Resource Center",
-    what: "Interned as a Computer Engineer in Dharamshala",
-    when: "2025",
+    where: "Queens, New York",
+    what: "Spent my teenage years in one of the most culturally diverse places in the world, surrounded by different languages, cuisines, communities, and perspectives.",
+    when: "2015-2023",
+  },
+  {
+    where: "Dharamshala, India",
+    what: "Where my Tibetan roots took shape. Grew up surrounded by Tibetan traditions, language, and a community that kept our culture alive far from home.",
+    when: "2004-2015",
   },
 ]
 
-const tools = ["TypeScript", "React", "Laravel", "Python", "Java", "Kotlin", "MySQL", "Figma", "Illustrator", "Photoshop"]
+const tools = ["TypeScript", "React", "Laravel", "Python", "Java", "Kotlin", "Figma", "Illustrator", "Photoshop"]
 
 const firstRow = projects.slice(0, Math.ceil(projects.length / 2))
 const secondRow = projects.slice(Math.ceil(projects.length / 2))
@@ -41,7 +45,7 @@ function SectionLabel({ children, className }: { children: React.ReactNode; clas
   return (
     <h2
       className={cn(
-        "mb-6 text-xs font-medium uppercase tracking-[0.25em] text-foreground/50 lg:col-span-3 lg:mb-0 lg:pt-1",
+        "mb-6 text-sm font-semibold uppercase tracking-[0.2em] text-foreground/60 sm:text-base lg:col-span-3 lg:mb-0 lg:pt-0.5 lg:text-lg",
         className
       )}
     >
@@ -92,23 +96,21 @@ export default function HomePage() {
       <SiteBackground />
 
       {/* text-left + w-full guard against global centering (e.g. Vite's default CSS) */}
-      <main className="w-full min-w-0 max-w-full overflow-x-clip text-left">
+      <main className="relative z-10 w-full min-w-0 max-w-full overflow-x-clip text-left">
         {/* Hero */}
-        <section className={cn(container, "flex min-h-svh flex-col items-start justify-center py-20")}>
-          <h1 className="font-special-section text-5xl leading-[1.05] sm:text-6xl md:text-7xl lg:text-8xl">
+        <section className={cn(container, "flex min-h-[75svh] flex-col items-start justify-center py-12")}>
+        <h1 className="font-special-section text-5xl leading-[1.05] sm:text-6xl md:text-7xl lg:text-8xl">
             <TypingAnimation typeSpeed={150} pauseDelay={2000} startOnView>
               Hi! I'm Tenzin 👋
             </TypingAnimation>
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground/70 sm:text-xl lg:text-2xl">
-            I study computer science and design at Northeastern, and I like building things that
+            I'm currently studying  Computer Science and Design at Northeastern. I like building things that
             work well and feel good to use.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
-            
-
             <InteractiveHoverButton
                   onClick={() => {
                     window.location.href = "mailto:choezomtenzin4@gmail.com"
@@ -117,63 +119,19 @@ export default function HomePage() {
             >
                 Say hello
             </InteractiveHoverButton>
-            <a
+            {/* <a
               href="#work"
               className="text-sm font-medium text-foreground/70 underline-offset-4 transition-colors hover:text-foreground hover:underline"
             >
               See what I've made ↓
-            </a>
-          </div>
-
-          <p className="mt-10 flex items-center gap-2 text-sm text-foreground/60">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-            </span>
-            Based in Boston · open to opportunities Jan–Jun 2027
-          </p>
-        </section>
-        {/* Coding work: full-bleed marquee */}
-        <section id="CodingProjects" className="scroll-mt-10 pb-20 sm:pb-28">
-          <div className={container}>
-            <SectionLabel>Coding Projects</SectionLabel>
-          </div>
-          <div
-            className={cn(
-              "relative flex w-full flex-col gap-4 overflow-hidden py-2",
-              "[mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]"
-            )}
-          >
-            <Marquee pauseOnHover className="[--duration:35s] [--gap:1rem]">
-              {firstRow.map((p) => (
-                <ProjectCard key={p.slug} project={p} />
-              ))}
-            </Marquee>
+            </a> */}
           </div>
         </section>
 
-        {/* Selected work: full-bleed marquee */}
-        <section id="DesignWork" className="scroll-mt-10 pb-20 sm:pb-28">
-          <div className={container}>
-            <SectionLabel>Design Projects</SectionLabel>
-          </div>
-          <div
-            className={cn(
-              "relative flex w-full flex-col gap-4 overflow-hidden py-2",
-              "[mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]"
-            )}
-          >
-            <Marquee reverse pauseOnHover className="[--duration:35s] [--gap:1rem]">
-              {secondRow.map((p) => (
-                <ProjectCard key={p.slug} project={p} />
-              ))}
-            </Marquee>
-          </div>
-        </section>
 
         {/* Context */}
         <section className={cn(container, row, "pb-20 sm:pb-28")}>
-          <SectionLabel>A little context</SectionLabel>
+          <SectionLabel>My Roots & Routes</SectionLabel>
           <ul className="divide-y divide-foreground/10 lg:col-span-9">
             {now.map((item) => (
               <li
@@ -189,11 +147,55 @@ export default function HomePage() {
             ))}
           </ul>
         </section>
+        
+        {/* Coding work: full-bleed marquee */}
+        <section id="CodingProjects" className="scroll-mt-10 pb-20 sm:pb-28">
+          <div className={container}>
+            <SectionLabel>Coding Projects</SectionLabel>
+          </div>
+          <div
+                className="w-full"
+                style={{
+                maskImage:
+                    "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
+                WebkitMaskImage:
+                    "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
+                }}
+            >
+                <Marquee pauseOnHover className="[--duration:35s] [--gap:1rem]">
+                {firstRow.map((p) => (
+                    <ProjectCard key={p.slug} project={p} />
+                ))}
+                </Marquee>
+            </div>
+        </section>
+
+        {/* Selected work: full-bleed marquee */}
+        <section id="DesignWork" className="scroll-mt-10 pb-20 sm:pb-28">
+          <div className={container}>
+            <SectionLabel>Design Projects</SectionLabel>
+          </div>
+          <div
+                className="w-full"
+                style={{
+                maskImage:
+                    "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
+                WebkitMaskImage:
+                    "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
+                }}
+          >
+            <Marquee reverse pauseOnHover className="[--duration:35s] [--gap:1rem]">
+              {secondRow.map((p) => (
+                <ProjectCard key={p.slug} project={p} />
+              ))}
+            </Marquee>
+          </div>
+        </section>
 
         {/* Tools */}
-        <section className={cn(container, row, "pb-20 sm:pb-28")}>
-          <SectionLabel>What I use</SectionLabel>
-          <p className="text-xl leading-relaxed text-foreground/80 sm:text-2xl lg:col-span-9 lg:text-3xl">
+        <section className={cn(container, "pb-20 sm:pb-28")}>
+          <SectionLabel className="lg:mb-6">What I use</SectionLabel>
+          <p className="max-w-4xl text-xl leading-relaxed text-foreground/80 sm:text-2xl lg:text-3xl">
             {tools.map((t, i) => (
               <span key={t}>
                 {t}

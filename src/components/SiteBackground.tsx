@@ -1,13 +1,11 @@
 import Particles from "@/components/Particles"
 import { useIsDark } from "@/hooks/useIsDark"
-import cloud1 from "@/assets/cloud1.png"
-import cloud2 from "@/assets/cloud2.png"
 
 export default function SiteBackground() {
   const isDark = useIsDark()
 
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden bg-[#C2C2C2] dark:bg-[#0a0a0a]">
+    <div className="fixed inset-0 z-0 overflow-hidden bg-[#C2C2C2] dark:bg-[#0a0a0a]">
       {isDark ? (
         <Particles
           particleColors={["#f4ff8a", "#c6ff6b", "#ffe28a"]}
@@ -53,19 +51,6 @@ export default function SiteBackground() {
           lightMode={false}
         />
       )}
-
-      <img
-        src={cloud1}
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-[8%] left-0 w-3/5 -translate-x-1/2 sm:w-2/5"
-      />
-      <img
-        src={cloud2}
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-[30%] right-0 w-3/5 translate-x-1/2 sm:w-2/5"
-      />
     </div>
   )
 }
