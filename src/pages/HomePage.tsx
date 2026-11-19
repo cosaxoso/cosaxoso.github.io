@@ -61,20 +61,29 @@ export default function HomePage() {
                 src= {cloud1}
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none absolute bottom-[8%] left-0 w-1/3 -translate-x-1/2"
+                className="pointer-events-none absolute bottom-[8%] left-0 w-2/5 -translate-x-1/2"
             />
         
             <img
                 src={cloud2}
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none absolute bottom-[30%] right-0 w-1/3 translate-x-1/2"
+                className="pointer-events-none absolute bottom-[30%] right-0 w-2/5 translate-x-1/2"
             />
         </div>
-      <h1 className="text-4xl font-bold">
-        <TypingAnimation>Hi, I'm Tenzin Choezom 👋</TypingAnimation>
+      <h1 className="text-4xl font-special-section">
+        <TypingAnimation 
+            typeSpeed={150}
+            pauseDelay={2000}
+            startOnView
+        >
+            Hi! I'm Tenzin 👋
+        </TypingAnimation>
       </h1>
-      <p className="mt-4 text-muted-foreground">Developer, designer, thinker.</p>
+      <p className="mt-4 text-muted-foreground">
+        I am a Computer Science and Design Student at Northeastern University. 
+      </p>
+        
     </main>
   )
-}
+} 

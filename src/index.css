@@ -164,3 +164,19 @@
     animation: none;
     mix-blend-mode: normal;
 }
+
+/* 4. Define the font face */
+/* @font-face {
+  font-family: "la-mericana", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+
+} */
+
+/* 2. Create a targeted class instead of applying to 'body' */
+.font-special-section {
+  font-family: "la-mericana", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
